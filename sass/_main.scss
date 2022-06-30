@@ -8,17 +8,17 @@
 
 
     &__inner {
-        padding: 19px 0 87px 0;
+        padding: 17px 0 87px 0;
     }
 
     &__main {
         display: flex;
-
+        margin-bottom: 22px;
     }
 
     &__logo {
         width: 210px;
-        margin-right: 30px;
+        margin-right: 29px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -56,7 +56,7 @@
         justify-content: space-between;
         padding-bottom: 8px;
         border-bottom: 1px solid #D7D7D7;
-        margin-bottom: 22px;
+        margin-bottom: 18px;
     }
 
     &__nav {
@@ -72,6 +72,7 @@
 
     &__nav-item {
         font-size: 12px;
+        letter-spacing: -0.1px;
 
         a {
             color: #252525;
@@ -86,10 +87,11 @@
     &__login-reg-item {
         font-size: 12px;
         font-weight: 400;
+        letter-spacing: -0.1px;
         color: #252525;
 
         &:not(:last-child) {
-            margin-right: 28px;
+            margin-right: 26px;
             position: relative;
 
             &::after {
@@ -109,7 +111,7 @@
 
     &__info-bottom {
         display: flex;
-        align-items: center;
+        align-items: flex-start;
     }
 
     &__banner-mini {
@@ -120,29 +122,36 @@
     }
 
     &__sort {
-        margin-right: 35px;
+        width: 164px;
+        padding-right: 10px;
     }
 
     &__sort-item {
         display: flex;
         align-items: center;
+        font-size: 14px;
+
+        &:not(:first-child) {
+            font-size: 12px;
+        }
 
         &:not(:last-child) {
             margin-bottom: 12px;
         }
 
         img {
-            width: 18px;
-            height: 18px;
+            width: 16px;
+            height: 16px;
             object-fit: contain;
-            margin-right: 10px;
+            margin-right: 12px;
         }
     }
 
     &__sort-text {
-        font-size: 14px;
         font-weight: 400;
         color: #252525;
+        letter-spacing: -0.1px;
+        border-bottom: 0.1rem solid #252525;
     }
 
     &__cards {
@@ -197,12 +206,13 @@
     }
 
     &__contacts-tel {
+        display: inline-block;
         font-size: 25px;
         font-weight: 700;
         color: #252525;
-        padding-bottom: 14px;
+        padding-bottom: 11px;
         border-bottom: 1px solid #D7D7D7;
-        margin-bottom: 4px;
+        letter-spacing: -0.5px;
     }
 
     &__contacts-sity {
@@ -230,6 +240,7 @@
         align-items: center;
         position: relative;
         width: 39px;
+        height: 100%;
         transition: ease 0.5s;
         padding: 0 0 0 5px;
 
@@ -285,12 +296,14 @@
         align-items: center;
         background: #252525;
         height: 100%;
+        padding-left: 60px;
+        padding-right: 60px;
 
         li {
-            padding: 0 19px;
+            padding: 0 18px;
             a {
                 color: #FFFFFF;
-                font-size: 16px;
+                font-size: 14px;
                 font-weight: 600;
             }
         }
@@ -298,6 +311,10 @@
     
     &__page-sale {
         text-transform: uppercase;
+        font-size: 14px;
+        color: #000000;
+        font-weight: 600;
+        padding: 0 14px;
     }
 }
 
@@ -307,7 +324,7 @@
 .select {
 	margin: 0 auto;
 	position: relative;
-	width: 250px;
+	width: 100%;
 }
 .select.is-active .select__body {
 	display: block;}
@@ -320,13 +337,16 @@
 }
 .select__current {
 	font-size: 12px;
-	padding: 8px;
+	padding: 8px 8px 8px 0;
+}
+.select.is-active .select__icon {
+    transform: rotate(90deg);
 }
 .select__icon {
 	height: 7px;
 	width: 7px;
     object-fit: contain;
-    margin-right: 7px;
+    transition: ease 0.3s;
 }
 
 .select__span {
@@ -341,11 +361,13 @@
 
 .select__body {
 	border: 1px solid #cccccc;
+    background: #FFFFFF;
 	display: none;
 	left: 0;
 	position: absolute;
 	right: 0;
 	top: 100%;
+    z-index: 1;
 }
 .select__item {
 	cursor: pointer;
