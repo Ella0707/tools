@@ -6,7 +6,6 @@
         margin: 0 auto;
     }
 
-
     &__inner {
         padding: 17px 0 87px 0;
     }
@@ -106,7 +105,6 @@
                 right: -14px;
             }
         }
-
     }
 
     &__info-bottom {
@@ -145,6 +143,10 @@
             object-fit: contain;
             margin-right: 12px;
         }
+    }
+
+    &__sort-span {
+        display: none;
     }
 
     &__sort-text {
@@ -221,9 +223,6 @@
         justify-content: space-between;
     }
 
-    &__sity-value {}
-
-    
     &__nav-page {
         display: flex;
         align-items: center;
@@ -234,7 +233,7 @@
         box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
         transition: ease 0.5s;
     }
-    
+
     &__search {
         display: flex;
         align-items: center;
@@ -248,7 +247,7 @@
             width: 200px;
         }
     }
-    
+
     &__input-search {
         background: inherit;
         width: 0;
@@ -257,14 +256,16 @@
         transition: ease 0.5s;
         outline: none;
         border: none;
-        border-bottom: 1px solid #252525;
+        padding-right: 35px;
 
         &.active {
             width: 100px;
             height: 100%;
             visibility: visible;
+            border-bottom: 1px solid #252525;
         }
     }
+
     &__btn-search {
         width: 39px;
         height: 100%;
@@ -288,9 +289,8 @@
             height: 19px;
             object-fit: contain;
         }
-    
     }
-    
+
     &__page-nav-list {
         display: flex;
         align-items: center;
@@ -301,80 +301,128 @@
 
         li {
             padding: 0 18px;
+            height: 100%;
+            transition: ease 0.3s;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
             a {
                 color: #FFFFFF;
                 font-size: 14px;
                 font-weight: 600;
+                transition: ease 0.3s;
             }
         }
     }
-    
+
+    &__page-nav-item {
+
+        &.active {
+            background: #FFCC00;
+
+            a {
+                color: #000000;
+            }
+        }
+    }
+
     &__page-sale {
         text-transform: uppercase;
         font-size: 14px;
         color: #000000;
         font-weight: 600;
         padding: 0 14px;
+        margin: 0 auto;
     }
 }
 
-
-
-
 .select {
-	margin: 0 auto;
-	position: relative;
-	width: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
 }
+
 .select.is-active .select__body {
-	display: block;}
+    display: block;
+}
 
 .select__header {
-	cursor: pointer;
-	display: flex;
+    cursor: pointer;
+    display: flex;
     align-items: center;
     justify-content: space-between;
 }
+
 .select__current {
-	font-size: 12px;
-	padding: 8px 8px 8px 0;
+    font-size: 12px;
+    padding: 8px 8px 8px 0;
 }
+
 .select.is-active .select__icon {
     transform: rotate(90deg);
 }
+
 .select__icon {
-	height: 7px;
-	width: 7px;
+    height: 7px;
+    width: 7px;
     object-fit: contain;
     transition: ease 0.3s;
 }
 
 .select__span {
-	flex-shrink: 0;
+    flex-shrink: 0;
     font-size: 12px;
     font-weight: 400;
     color: #252525;
+
     span {
         border-bottom: 1px dashed #252525;
     }
 }
 
 .select__body {
-	border: 1px solid #cccccc;
+    border: 1px solid #cccccc;
     background: #FFFFFF;
-	display: none;
-	left: 0;
-	position: absolute;
-	right: 0;
-	top: 100%;
+    display: none;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 100%;
     z-index: 1;
 }
+
 .select__item {
-	cursor: pointer;
-	font-size: 12px;
-	padding: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 8px;
 }
 
 .select__item:hover {
-	background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
+
+.btn-mobile {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    background: url(./../img/burger.svg);
+    background-size: contain;
+    background-position: center;
+    border: none;
+    outline: none;
+    display: none;
+
+    position: absolute;
+    top: 28px;
+    left: 30px;
+    z-index: 10;
+
+    &.active {
+        background: url(./../img/close.svg);
+        background-size: contain;
+        background-position: center;
+    }
+}
+
